@@ -1,0 +1,49 @@
+extends common/layout 
+
+block header-content
+    div.pink-ribbon 
+        a(href="/") HOME
+        a(href="/aboutus") ABOUT US
+        a(href="/products") PRODUCTS
+        a(href="#") OFFERS
+        a(href="#") CONTACT 
+    div.header-info
+        div.logo
+            img(src="/Images/logo.svg", alt="Logo").logo-img
+        .profile1 
+            img(src="/Images/profile.svg", alt="Profile").profile-logo
+            img(src="/Images/cart.svg", alt="Cart").cart-logo
+            .searchbox 
+                input(type="text" placeholder="Search").search-input
+                button.search-button
+                    img(src="/Images/search.svg", alt="search").search-logo
+block layout-content
+    .aboutus 
+        img(src="/Images/AboutUs.svg", alt="AboutUs").aboutus-header
+        .aboutus-content 
+            p Welcome to Twisted Cartoons, where we turn your memories into timeless treasures. Specializing in custom scrapbooks and handmade gifts, we craft each piece with creativity, quality, and personalization at heart. With a commitment to excellence and a passion for storytelling, we'll work closely with you to bring your vision to life. Choose us for handmade excellence, personalized connection, and the preservation of your most precious moments. Let's create something beautiful together.
+    .reviews 
+        img(src="/Images/Words.svg", alt="Words from client").reviews-header
+        ul 
+            each review in feedback 
+                li 
+                    .review 
+                         p.username #{review.username}
+                         p.comment #{review.comment}
+                         p.rating Rating: #{review.rating}/5
+    .review-form 
+        img(src="/Images/Share.svg", alt="Share your Experience").form-header
+        form(action="/aboutus/addreview/submit",method="POST") 
+            .form
+                .name
+                    label(for="username").label NAME: 
+                    input(type="text",id="username",name="username",required).input.input-name
+                .comment-box 
+                    label(name="review", for="review").label REVIEW: 
+                    textarea(type="text-box",name="review", cols="30", rows="10",id="review",required).input
+                .rating 
+                    label(name="rating", for="rating").label RATING: 
+                    input(type="number",min="0",max="5", placeholder="OUT OF 5",name="rating",required).input-rating
+            .form-button 
+                button(type="submit") SUBMIT
+            

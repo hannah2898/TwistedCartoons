@@ -1,0 +1,70 @@
+extends common/layout 
+
+block header-content
+    div.logo
+        img(src="/Images/logo.svg", alt="Logo").logo-img
+    .profile 
+        img(src="/Images/profile.svg", alt="Profile").profile-logo
+        img(src="/Images/cart.svg", alt="Cart").cart-logo
+        .searchbox 
+            input(type="text" placeholder="Search").search-input
+            button.search-button
+                img(src="/Images/search.svg", alt="search").search-logo
+    div.pink-ribbon 
+        a(href="/") HOME
+        a(href="/aboutus") ABOUT US
+        a(href="/products") PRODUCTS
+        a(href="#") OFFERS
+        a(href="#") CONTACT 
+block layout-content
+    div(data-bs-wrap="true",data-bs-ride="carousel",data-bs-interval="3000").carousel.slide#carouselDemo
+        .carousel-inner 
+            div(data-bs-interval="3000").carousel-item.active
+                img(src="/Images/carousel1.svg", alt="Image1")
+            div(data-bs-interval="3000").carousel-item
+                img(src="/Images/carousel2.svg", alt="Image2")
+            div(data-bs-interval="3000").carousel-item
+                img(src="/Images/carousel3.svg", alt="Image3")
+        button(type="button", data-bs-target="#carouselDemo", data-bs-slide="prev").carousel-control-prev
+            span.carousel-control-prev-icon
+        button(type="button", data-bs-target="#carouselDemo", data-bs-slide="next").carousel-control-next
+            span.carousel-control-next-icon
+        .carousel-indicators 
+            button(type="button", data-bs-target="#carouselDemo",data-bs-slide-to="0").active
+            button(type="button", data-bs-target="#carouselDemo",data-bs-slide-to="1")
+            button(type="button", data-bs-target="#carouselDemo",data-bs-slide-to="2")
+    .product-page
+        img(src="/Images/products.svg", alt="Check out our products").product-header
+        .products 
+            .category
+                .image
+                    img(src="/Images/scrapbook.svg", alt="Scrapbook")
+                .title 
+                    a(href="/products") 
+                        h2 SCRAPBOOKS 
+                .content 
+                    p Express yourself through artful arrangements of photos , stickers, and embellishments with our scrapbooks
+            .category
+                .image
+                    img(src="/Images/giftbox.svg", alt="giftbox")
+                .title 
+                    h2 GIFT BOXES 
+                .content 
+                    p Discover the joy of gifting with our exquisite collection of gift boxes, perfect for any occasion and recipient
+            .category
+                .image
+                    img(src="/Images/keychain.svg", alt="keychain")
+                .title 
+                    h2 KEYCHAINS
+                .content 
+                    p Elevate your keyring with our stylish and versatile keychain designs, crafted to complement your style
+    .offers 
+        .offers-content 
+            .content-heading
+                img(src="/Images/Offers.svg", alt="Offers").content-header
+            .content-paragraph 
+                p Get special offers on our valentine's day collection.
+                p Hurry before the offer runs out !!
+        .offers-video
+            video(controls,autoplay,muted,loop)
+                source(src="/Images/Valentines.mp4" type="video/mp4")

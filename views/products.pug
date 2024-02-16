@@ -1,0 +1,77 @@
+extends common/layout 
+
+block header-content
+    div.pink-ribbon 
+        a(href="/") HOME
+        a(href="/aboutus") ABOUT US
+        a(href="/products") PRODUCTS
+        a(href="#") OFFERS
+        a(href="#") CONTACT 
+    div.header-info
+        div.logo
+            img(src="/Images/logo.svg", alt="Logo").logo-img
+        .profile1 
+            img(src="/Images/profile.svg", alt="Profile").profile-logo
+            img(src="/Images/cart.svg", alt="Cart").cart-logo
+            .searchbox 
+                input(type="text" placeholder="Search").search-input
+                button.search-button
+                    img(src="/Images/search.svg", alt="search").search-logo
+block layout-content
+    .explore-products
+        img(src="/Images/Explore.svg", alt="Explore").explore-header
+        .product-list 
+            .product
+                .product-img
+                    img(src="/Images/heartscrapbook.jpg", alt="heartscrapbook")
+                .buy-now
+                    button BUY NOW
+                .product-desc 
+                    p.title HEART SCRAPBOOK
+                    p.desc MINI SCRAPBOOK
+                    p.price $15.50
+            .product
+                .product-img
+                    img(src="/Images/Unicorn.jpg", alt="Unicorn").unicorn
+                .buy-now
+                    button BUY NOW
+                .product-desc 
+                    p.title UNICORN SCRAPBOOK
+                    p.desc Medium SCRAPBOOK
+                    p.price $40.50
+            .product
+                .product-img
+                    img(src="/Images/Birthday.jpg", alt="Birthday")
+                .buy-now
+                    button BUY NOW
+                .product-desc 
+                    p.title BIRTHDAY SCRAPBOOK
+                    p.desc Jumbo SCRAPBOOK
+                    p.price $80.50
+            .product
+                .product-img
+                    img(src="/Images/BLUE.jpg", alt="BlueScrapbook")
+                .buy-now
+                    button BUY NOW
+                .product-desc 
+                    p.title BLUE SCRAPBOOK
+                    p.desc MEDIUM SCRAPBOOK
+                    p.price $45.50
+            .product
+                .product-img
+                    img(src="/Images/RecipeBook.jpg", alt="RecipeBook")
+                .buy-now
+                    button BUY NOW
+                .product-desc 
+                    p.title RECIPEBOOK
+                    p.desc LARGE SCRAPBOOK
+                    p.price $60.50
+            .product
+                .product-img
+                    img(src="/Images/Color.jpg", alt="Colorscrapbook")
+                .buy-now
+                    button BUY NOW
+                .product-desc 
+                    p.title COLOR SCRAPBOOK
+                    p.desc MINI SCRAPBOOK
+                    p.price $20.50
